@@ -1,4 +1,7 @@
-<div *ngFor="let image of images; let i = index">
-    <img [src]="image" alt="Image {{ i + 1 }}" />
-    <app-slider [singleSliderFlag]="true" [(value1)]="values[i]"></app-slider> 
+
+<div class="force-card">
+    <div *ngFor="let image of images; let i = index">
+        <img [src]="image" alt="Image {{ i + 1 }}" />
+        <app-slider [singleSliderFlag]="true" [(value1)]="values[i]"></app-slider> 
+    </div>
 </div>
