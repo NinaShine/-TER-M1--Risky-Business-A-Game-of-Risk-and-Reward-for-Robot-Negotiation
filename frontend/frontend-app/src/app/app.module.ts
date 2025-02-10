@@ -11,9 +11,10 @@ import { MatSliderModule } from "@angular/material/slider";
 import { MatButtonModule } from "@angular/material/button";
 import { Stickman1Component } from "./component/stickman1/stickman1.component";
 import { Stickman2Component } from "./component/stickman2/stickman2.component";
+import { ForcesPageComponent } from "./forces-page/forces-page.component";
 
 @NgModule({
-  declarations: [AppComponent, SliderComponent, ImgTextComponent, Stickman1Component, Stickman2Component],
+  declarations: [AppComponent, SliderComponent, ImgTextComponent, Stickman1Component, Stickman2Component, ForcesPageComponent],
   imports: [
     BrowserModule,
     FormsModule,

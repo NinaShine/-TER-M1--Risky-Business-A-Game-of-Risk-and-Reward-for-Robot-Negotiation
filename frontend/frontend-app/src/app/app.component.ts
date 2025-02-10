@@ -4,10 +4,11 @@ import { ImgTextComponent } from "./component/img-text/img-text.component";
 import { SubmitComponent } from "./component/submit/submit.component";
 import { Stickman1Component } from "./component/stickman1/stickman1.component";
 import { Stickman2Component } from "./component/stickman2/stickman2.component";
+import { ForcesPageComponent } from "./forces-page/forces-page.component";
 
 @Component({
   selector: "app-root",
-  imports: [SliderComponent, SubmitComponent, ImgTextComponent, Stickman1Component, Stickman2Component],
+  imports: [SliderComponent, SubmitComponent, ImgTextComponent, Stickman1Component, Stickman2Component, ForcesPageComponent],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",
 })
