@@ -82,14 +82,12 @@ a:hover {
 }
 
 
-
 ul {
     position: absolute;
   top: 20px;
   right: 20px;
   padding: 10px 20px;
 }
-
 
 .menu-container{
     position: relative;
