@@ -6,7 +6,7 @@
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 500px;
     width: fit-content;
     margin: 50px auto;
 }
@@ -23,7 +23,7 @@
     height: 50px;
     object-fit: contain; 
     border-radius: 8px; 
-    background: #fff; 
+    background: #222020; 
     padding: 5px;
 }
 
