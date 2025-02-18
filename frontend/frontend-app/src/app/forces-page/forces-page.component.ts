@@ -19,7 +19,7 @@ export class ForcesPageComponent {
     'assets/robot.png',
     
   ];
-  values: number[] = [0,0,0,0,0,0,0]; 
+  values: number[] = [1,1,1,1,1,1,1]; 
 
   descs: string[] = [
     "Enfant d'environ 10 ans",
