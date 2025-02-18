@@ -58,16 +58,18 @@ export class AppComponent implements OnInit {
    * Récupère un nouveau scénario depuis l'API et le stocke dans `sessionStorage`
    */
   fetchScenario() {
+    this.checkTurn();
     console.log("🔄 Fetching new scenario...");
     this.dataService.getScenario().subscribe(
       (data) => {
-        if (data && data.textId) {
+        if (data && data.scenario.textId) {
           // Vérifie si les données sont valides
-          this.scenario = data;
+          this.scenario = data.scenario;
           console.log("✅ Scenario reçu :", this.scenario);
 
           // Sauvegarde dans `sessionStorage` pour éviter les appels répétés
-          sessionStorage.setItem("scenario", JSON.stringify(data));
+          sessionStorage.setItem("scenario", JSON.stringify(data.scenario));
+          sessionStorage.setItem("turn",JSON.stringify(data.turn))
         } else {
           console.error("❌ Scenario invalide :", data);
         }
@@ -76,5 +78,16 @@ export class AppComponent implements OnInit {
         console.error("❌ Erreur API :", error);
       }
     );
+  }
+
+  checkTurn(){
+    let turn = sessionStorage.getItem("turn");
+    if(turn){
+      let turnObj = JSON.parse(turn);
+      if(turnObj%5==0){
+        window.location.reload();
+      }
+    }
+    console.log("Tour = ", sessionStorage.getItem("turn"));
   }
 }

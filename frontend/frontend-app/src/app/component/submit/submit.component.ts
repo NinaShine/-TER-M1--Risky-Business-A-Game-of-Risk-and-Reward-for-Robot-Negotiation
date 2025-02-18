@@ -41,6 +41,7 @@ export class SubmitComponent {
       },
     };
     console.log("Body : ", body);
+    console.log(sessionStorage);
 
     this.http
       .post("http://localhost:3000/submit", body, { withCredentials: true })
@@ -48,5 +49,14 @@ export class SubmitComponent {
         next: (response) => console.log("Test : ", response),
         complete: () => console.log("Requête terminé"),
       });
+  }
+
+  incrementTurn(){
+    let turn = sessionStorage.getItem("turn");
+    if(turn){
+      let turnObj = JSON.parse(turn);
+      turnObj++;
+      sessionStorage.setItem("turn",JSON.stringify(turnObj));
+    }
   }
 }
