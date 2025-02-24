@@ -11,6 +11,8 @@ app.use(
   cors({
     origin: "http://choice-quizz.vercel.app",
     credentials: true,
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type,Authorization'
   })
 );
 
