@@ -29,7 +29,7 @@ app.use(
     secret: "secret-key", // Clé en attendant pour tester
     resave: true,
     saveUninitialized: true,
-    cookie: { secure: false, httpOnly: true, sameSite: "lax" }, // Passe à true si HTTPS
+    cookie: { secure: false, httpOnly: true,    sameSite: "None" // Autorise les requêtes cross-originsameSite: "None" }, // Passe à true si HTTPS
   })
 );
 
