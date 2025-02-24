@@ -9,7 +9,8 @@ const route = require("./routes/Route");
 
 app.use(
   cors({
-    origin: ["http://localhost:4200", "https://choice-quizz.vercel.app"], // Ajoute ton frontend en prod
+    origin: ["https://choice-quizz.vercel.app"],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
 );
@@ -29,7 +30,10 @@ app.use(
     secret: "secret-key", // Clé en attendant pour tester
     resave: true,
     saveUninitialized: true,
-    cookie: { secure: false, httpOnly: true,    sameSite: "None" }, // Passe à true si HTTPS
+    cookie: {
+      secure: true,  
+      httpOnly: true,
+      sameSite: "None"
   })
 );
 
