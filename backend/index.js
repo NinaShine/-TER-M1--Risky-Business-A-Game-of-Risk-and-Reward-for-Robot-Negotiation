@@ -27,15 +27,17 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   session({
-    secret: "secret-key", // Clé en attendant pour tester
+    secret: "secret-key",
     resave: true,
     saveUninitialized: true,
     cookie: {
-      secure: true,  
+      secure: "true", 
       httpOnly: true,
       sameSite: "None"
+    }
   })
 );
+
 
 app.use((req, res, next) => {
   console.log(
