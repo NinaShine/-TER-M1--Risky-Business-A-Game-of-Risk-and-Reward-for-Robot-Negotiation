@@ -9,12 +9,17 @@ const route = require("./routes/Route");
 
 app.use(
   cors({
-    origin: "http://choice-quizz.vercel.app",
+    origin: ["http://localhost:4200", "https://choice-quizz.vercel.app"], // Ajoute ton frontend en prod
     credentials: true,
-    methods: 'GET,POST,PUT,DELETE',
-    allowedHeaders: 'Content-Type,Authorization'
   })
 );
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "https://choice-quizz.vercel.app");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    next();
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
