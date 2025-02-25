@@ -22,7 +22,7 @@ app.use(
     secret: "secret-key", // Clé en attendant pour tester
     resave: true,
     saveUninitialized: true,
-    cookie: { secure: false, httpOnly: true, sameSite: "lax" }, // Passe à true si HTTPS
+    cookie: { secure: false, httpOnly: true, sameSite: "true" }, // Passe à true si HTTPS
   })
 );
 
@@ -30,6 +30,8 @@ app.use((req, res, next) => {
   console.log(
     `📡 [${new Date().toISOString()}] Requête reçue : ${req.method} ${req.url}`
   );
+  console.log("📝 Session ID :", req.sessionID);
+  console.log("📝 Session Data :", req.session);
   next();
 });
 

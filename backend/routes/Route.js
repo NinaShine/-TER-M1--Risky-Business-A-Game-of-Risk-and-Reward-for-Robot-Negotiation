@@ -9,6 +9,7 @@ const Response = require("../models/responseModel");
 router.get("/init", async (req, res) => {
   console.log("requête init");
   try {
+    console.log("📝 Session avant initialisation :", req.session);
     // Initialiser la liste une seule fois par utilisateur
     if (!req.session.randomTexts) {
       const allTexts = await Text.find();
